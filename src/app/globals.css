@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@layer theme {
+  :root {
+    --font-display: 'Fredoka', cursive, sans-serif;
+    --font-sans: 'Nunito', system-ui, sans-serif;
+    
+    /* Pet Town Theme Colors */
+    --color-primary: #F26430;       /* Laranja vibrante acolhedor */
+    --color-primary-hover: #DC5322;
+    --color-primary-light: #FFEDE5;
+    
+    --color-teal: #14B8A6;          /* Verde água / menta refrescante */
+    --color-teal-dark: #0D9488;
+    --color-teal-light: #E6FFFA;
+    
+    --color-ink: #1E293B;           /* Azul profundo escuro */
+    --color-ink-foreground: #F8FAFC;
+    
+    --color-background: #FDFBF7;   /* Fundo quente suave */
+    --color-card: #FFFFFF;
+    --color-muted: #64748B;
+    --color-border: #F1E9DF;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: 'Nunito', system-ui, sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-ink);
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: var(--color-background);
+  color: var(--color-ink);
+}
+
+.font-display {
+  font-family: 'Fredoka', cursive, sans-serif;
+}
+
+.font-sans {
+  font-family: 'Nunito', system-ui, sans-serif;
+}
+
+/* Micro-animations */
+@keyframes pulse-gentle {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+}
+
+.pulse-whatsapp {
+  animation: pulse-gentle 2.5s infinite ease-in-out;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ede6;
+}
+::-webkit-scrollbar-thumb {
+  background: #f2643099;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #f26430;
+}
