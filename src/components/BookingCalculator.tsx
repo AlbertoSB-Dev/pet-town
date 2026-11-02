@@ -20,10 +20,10 @@ export default function BookingCalculator() {
   ]);
   const [period, setPeriod] = useState<"manha" | "tarde">("manha");
 
-  const servicesList = [
+  const dogServices = [
     {
       id: "banho-tosa",
-      name: "Banho & Tosa Completa",
+      name: "Banho & Tosa Completa Canina",
       desc: "Higienização, tosa da raça e acabamento",
       estimated: "A partir de R$ 75",
     },
@@ -52,6 +52,47 @@ export default function BookingCalculator() {
       estimated: "Sob consulta",
     },
   ];
+
+  const catServices = [
+    {
+      id: "tosa-felina",
+      name: "Tosa Felina Completa (Tosa Leão / Bebê)",
+      desc: "Alívio de pelos e nós para gatos de pelo longo (Persa, Maine Coon, etc.)",
+      estimated: "A partir de R$ 90",
+    },
+    {
+      id: "tosa-higienica-gato",
+      name: "Tosa Higiênica & Desembolo de Nós",
+      desc: "Região perianal, almofadinhas (patas) e escovação profunda sem estresse",
+      estimated: "A partir de R$ 60",
+    },
+    {
+      id: "banho-relaxante-gato",
+      name: "Banho Especial Felino com Feromônios",
+      desc: "Ambiente silencioso com Feliway, água morna e secagem manual suave",
+      estimated: "A partir de R$ 70",
+    },
+    {
+      id: "corte-unha-gato",
+      name: "Corte de Unhas & Higiene Auricular",
+      desc: "Manutenção rápida e segura para evitar arranhões e infecções",
+      estimated: "A partir de R$ 30",
+    },
+    {
+      id: "consulta-felina",
+      name: "Consulta Veterinária Cat-Friendly",
+      desc: "Atendimento calmo, sem cães no ambiente e manejo respeitoso",
+      estimated: "Sob consulta",
+    },
+    {
+      id: "vacina-gato",
+      name: "Vacina Felina (Quádrupla / Quíntupla / Raiva)",
+      desc: "Imunização importada essencial para gatos de apartamento e casa",
+      estimated: "Sob consulta",
+    },
+  ];
+
+  const servicesList = petType === "dog" ? dogServices : catServices;
 
   const toggleService = (id: string) => {
     if (selectedServices.includes(id)) {
@@ -123,7 +164,10 @@ Poderiam me informar os horários disponíveis? Obrigado!`;
                 <div className="mt-2.5 grid grid-cols-2 gap-3">
                   <button
                     type="button"
-                    onClick={() => setPetType("dog")}
+                    onClick={() => {
+                      setPetType("dog");
+                      setSelectedServices(["banho-tosa"]);
+                    }}
                     className={`flex items-center justify-center gap-2.5 rounded-2xl border-2 py-3 font-display font-semibold transition ${
                       petType === "dog"
                         ? "border-[#F26430] bg-[#FFEDE5] text-[#DC5322]"
@@ -134,7 +178,10 @@ Poderiam me informar os horários disponíveis? Obrigado!`;
                   </button>
                   <button
                     type="button"
-                    onClick={() => setPetType("cat")}
+                    onClick={() => {
+                      setPetType("cat");
+                      setSelectedServices(["tosa-felina"]);
+                    }}
                     className={`flex items-center justify-center gap-2.5 rounded-2xl border-2 py-3 font-display font-semibold transition ${
                       petType === "cat"
                         ? "border-[#14B8A6] bg-[#E6FFFA] text-[#0D9488]"

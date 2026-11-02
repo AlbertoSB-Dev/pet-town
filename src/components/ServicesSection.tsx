@@ -24,8 +24,8 @@ export default function ServicesSection() {
       icon: Bath,
       items: [
         "Banho com água morna e temperatura controlada",
-        "Tosa higiênica, geral ou corte na tesoura por raça",
-        "Hidratação profunda de pelagem e desembaraço",
+        "Tosa higiênica e tosa da raça para cães e gatos (Tosa Leão, Bebê ou Tesoura)",
+        "Desembolo suave de nós e hidratação profunda sem estresse",
         "Limpeza de ouvidos e corte seguro de unhas",
       ],
       whatsappMsg: "Olá! Gostaria de agendar um Banho e Tosa no Pet Town.",
@@ -169,12 +169,12 @@ export default function ServicesSection() {
               <Sparkles className="h-3.5 w-3.5" /> Cuidados Especiais
             </span>
             <h3 className="mt-3 font-display text-2xl font-bold sm:text-3xl">
-              Seu pet é idoso ou tem necessidades especiais?
+              Cuidado especial para Gatos, Idosos e Pets Sensíveis
             </h3>
             <p className="mt-2 text-sm text-teal-50 sm:text-base leading-relaxed">
-              Trabalhamos com manejo humanizado e sem pressa para pets cardiopatas,
-              idosos, filhotes ou com trauma de secador. Avise nossa equipe na
-              chegada!
+              Trabalhamos com manejo humanizado e protocolo Cat-Friendly (ambiente calmo, sem latidos,
+              com difusor de feromônios Feliway), além de atenção especial a pets cardiopatas, idosos ou
+              com medo de secador.
             </p>
           </div>
           <div className="mt-6 lg:mt-0">
